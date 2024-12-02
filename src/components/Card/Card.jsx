@@ -5,7 +5,7 @@ import Tags from '../Tags/Tags.jsx'
 import DeleteButton from '../ui/Button/DeleteButton/DeleteButton.jsx'
 
 
-export default function Card({ title = '', image, content = '', tags = [] }) {
+export default function Card({ title = '', image, content = '', tags = [], onDelete }) {
 
     return (
         <>
@@ -20,7 +20,7 @@ export default function Card({ title = '', image, content = '', tags = [] }) {
                         <p className={style.description}>{content}</p>
                         <div className={style.buttons}>
                             <Button />
-                            <DeleteButton />
+                            <DeleteButton onClick={onDelete} />
                         </div>
                     </div>
                 </div>

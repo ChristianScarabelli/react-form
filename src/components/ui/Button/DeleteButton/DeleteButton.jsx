@@ -1,7 +1,7 @@
 import style from './DeleteButton.module.css'
 
-export default function DeleteButton() {
+export default function DeleteButton({ onClick }) {
     return (
-        <button className={style.button}>x</button>
+        <button onClick={onClick} className={style.button}>x</button>
     )
 }
