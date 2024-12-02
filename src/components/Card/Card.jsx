@@ -5,7 +5,7 @@ import Tags from '../Tags/Tags.jsx'
 import DeleteButton from '../ui/Button/DeleteButton/DeleteButton.jsx'
 
 
-export default function Card({ title = '', image, content = '', tags = [], onDelete }) {
+export default function Card({ title = '', image, content = '', tags = [], onDelete, author = '' }) {
 
     return (
         <>
@@ -16,6 +16,7 @@ export default function Card({ title = '', image, content = '', tags = [], onDel
                     </figure>
                     <div className={style.body}>
                         <h3 className={style.title}>{title}</h3>
+                        <h4>{author}</h4>
                         < Tags tags={tags} />
                         <p className={style.description}>{content}</p>
                         <div className={style.buttons}>

@@ -57,25 +57,26 @@ export default function Main() {
                         <div className='tags_stripe'>
                             < Tags tags={uniqueTags} />
                         </div>
-                        <form onSubmit={addNewPost} action="">
+                        <form onSubmit={addNewPost} className='form'>
                             <input
                                 type="text"
                                 onChange={(event) => setTitle(event.target.value)}
-                                placeholder='Titolo'
+                                placeholder='Nuovo titolo'
                                 value={title} />
                             <input
                                 type="text"
                                 onChange={(event) => setAuthor(event.target.value)}
-                                placeholder='Nome'
+                                placeholder='Nome autore'
                                 value={author} />
                             <select
+                                className='select'
                                 onChange={(event) => setWorkState(event.target.value === 'true')}
                                 value={workState ? 'true' : 'false'}
                             >
                                 <option value="true">Pubblicato</option>
                                 <option value="false">Bozza</option>
                             </select>
-                            <input type="submit" value='aggiungi' />
+                            <input className='submit' type="submit" value='Aggiungi' />
                         </form>
                     </div>
                     <div className='container'>
@@ -87,6 +88,7 @@ export default function Main() {
                                             image={post.image}
                                             title={post.title}
                                             tags={post.tags}
+                                            author={post.author}
                                             content={post.content}
                                             onDelete={() => deletePost(post.id)}
                                         />
