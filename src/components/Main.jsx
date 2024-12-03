@@ -43,7 +43,7 @@ export default function Main() {
 
     // funzione per cancellare i post
     function deletePost(postId) {
-        setPost((prevPosts) => prevPosts.filter((post) => post.id !== postId))
+        setPost((prevPosts) => prevPosts.filter((post) => post.id !== postId))  // prendo l'array di post e lo ritorno tutto tranne quello il cui id è diverso da quello cliccato
     }
 
 
@@ -70,8 +70,8 @@ export default function Main() {
                                 value={author} />
                             <select
                                 className='select'
-                                onChange={(event) => setWorkState(event.target.value === 'true')}
-                                value={workState ? 'true' : 'false'}
+                                onChange={(event) => setWorkState(event.target.value === 'true')} // imposto il value come un valore boleano
+                                value={workState ? 'true' : 'false'}  // imposto true o false come valori possibili della variabile di stato
                             >
                                 <option value="true">Pubblicato</option>
                                 <option value="false">Bozza</option>
